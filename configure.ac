@@ -55,6 +55,15 @@ AX_CHECK_STATEMENT(
 
 AX_CHECK_STATEMENT_LIBS(["" "-ldl"], [LIBDL], [libdl], [dlfcn.h], [dlopen("", 0)])
 
+AC_ARG_ENABLE([cache],
+  AS_HELP_STRING([--disable-cache], [Disable cache support]))
+
+AS_IF[test "x$enable_cache" != "xno"], [
+  AC_MSG_CHECKING([for cache support])
+  AS_IF([test "x$ax_pthread_ok" = "xyes"], [
+  ])
+])
+
 AX_PKG_ADD([LIBAV],
   [libavutil > 51.73.0 libavcodec > 54.34.0 libavformat > 54.19.0 libswscale >= 2.0.0])
 
